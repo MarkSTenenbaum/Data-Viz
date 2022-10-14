@@ -12,9 +12,8 @@ geom_text(aes(label = ifelse(pct > 0.05, paste(round(pct*100)), '')),
 facet_wrap(~ trad, ncol = 1, strip.position = 'left') +
   theme(strip.text.y.left = element_text(angle = 0))
   
-  
-
-
+# See available themes
+ggthemes()
 
 
 # Using existing pallettes 
