@@ -58,3 +58,10 @@ pred1_lgb_16 <- plot_model(mod1_lib_lgb_16, type = 'pred', terms = c('trad', 'LG
 pred1_lgb_16 <- pred1_lgb_16 + theme_bw() + labs(y = 'Liberal', x = '', title = 'LGB 2016') + ylim(0.4, 0.8)
 
 
+# How to manually override aesthetics to adjust your legend. (Here I'm adjusting colors of my linetype legend, but it could be a fill/color/group legend, etc.)
+guides(linetype = guide_legend(override.aes = list(color = c('black', 'gray50', 'gray70', 'gray85'))))
+
+# How to remove specific legend if having double-legend issue (e.g., remove fill/color/group/linetype)
+giudes(color = 'none') 
+
+
