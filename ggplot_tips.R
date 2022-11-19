@@ -72,4 +72,7 @@ AABBCC
 plot <- sjplot + displot +chooseplot + bornplot + cultplot + plot_layout(guides = "collect", design = layout)
 ggsave('test2.png', height = 15, width = 25)
 
+# How to take separate legends from diff plots and replace it w/ one legend, centered on the right
+plot_layout(guides = "collect") # see example above
+
 
