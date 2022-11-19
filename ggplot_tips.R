@@ -64,4 +64,12 @@ guides(linetype = guide_legend(override.aes = list(color = c('black', 'gray50', 
 # How to remove specific legend if having double-legend issue (e.g., remove fill/color/group/linetype)
 giudes(color = 'none') 
 
+# How to manually arrange plots 
+layout <- "
+AABBCC
+#DDEE#
+"
+plot <- sjplot + displot +chooseplot + bornplot + cultplot + plot_layout(guides = "collect", design = layout)
+ggsave('test2.png', height = 15, width = 25)
+
 
