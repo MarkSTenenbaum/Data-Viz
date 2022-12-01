@@ -75,4 +75,7 @@ ggsave('test2.png', height = 15, width = 25)
 # How to take separate legends from diff plots and replace it w/ one legend, centered on the right
 plot_layout(guides = "collect") # see example above
 
+# space between items on legend
+legend.key.size = unit(3, 'lines')
+
 
