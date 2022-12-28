@@ -2,6 +2,9 @@
 # Set scales to percent
 scale_y_continuous(labels = scales::percent)
 
+# Left align labels
++ theme(axis.text.y = element_text(hjust = 0))
+
 # Geom text for columns (alternate position fill/dodge)
 geom_text(aes(label = ifelse(pct > 0.05, paste(round(pct*100)), '')), 
             position = position_fill(vjust = 0.5, reverse = T))
