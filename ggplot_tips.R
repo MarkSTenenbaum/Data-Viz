@@ -13,7 +13,8 @@ geom_text(aes(label = ifelse(pct > 0.05, paste(round(pct*100)), '')),
             
 # Misc. facet wrap tools
 facet_wrap(~ trad, ncol = 1, strip.position = 'left') +
-  theme(strip.text.y.left = element_text(angle = 0))
+  theme(strip.text.y.left = element_text(angle = 0),
+        panel.spacing = unit(2, "lines"))             # adds more space between plots
   
 # See available themes
 ggthemes()
