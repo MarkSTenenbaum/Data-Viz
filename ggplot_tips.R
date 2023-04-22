@@ -8,8 +8,11 @@ scale_y_continuous(labels = scales::percent)
 # Geom text for columns (alternate position fill/dodge)
 geom_text(aes(label = ifelse(pct > 0.05, paste(round(pct*100)), '')), 
             position = position_fill(vjust = 0.5, reverse = T))
-            
-            
+
+# Centering x-axis text label in combined plots through patchwork
+p1 + p2 + plot_layout(guides = 'collect') + 
+  plot_annotation(caption = 'Unequal Criminal Justice for Blacks and Latinos', 
+                  theme = theme(plot.caption = element_text(hjust = 0.35, size = 12, vjust = 6)))   
             
 # Misc. facet wrap tools
 facet_wrap(~ trad, ncol = 1, strip.position = 'left') +
