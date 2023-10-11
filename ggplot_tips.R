@@ -6,8 +6,8 @@ scale_y_continuous(labels = scales::percent)
 + theme(axis.text.y = element_text(hjust = 0))
 
 # Geom text for columns (alternate position fill/dodge)
-geom_text(aes(label = ifelse(pct > 0.05, paste(round(pct*100)), '')), 
-            position = position_fill(vjust = 0.5, reverse = T))
+geom_text(aes(label = ifelse(pct > 0.05, paste0(round(pct*100), '%'), '')), 
+            position = position_fill(vjust = 0.5))
 
 # Centering x-axis text label in combined plots through patchwork
 p1 + p2 + plot_layout(guides = 'collect') + 
