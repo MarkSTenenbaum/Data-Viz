@@ -12,7 +12,17 @@ geom_text(aes(label = ifelse(pct > 0.05, paste0(round(pct*100), '%'), '')),
 # Centering x-axis text label in combined plots through patchwork
 p1 + p2 + plot_layout(guides = 'collect') + 
   plot_annotation(caption = 'Unequal Criminal Justice for Blacks and Latinos', 
-                  theme = theme(plot.caption = element_text(hjust = 0.35, size = 12, vjust = 6)))   
+                  theme = theme(plot.caption = element_text(hjust = 0.35, size = 12, vjust = 6))) 
+
+# Centering y-axis text label in combined plots through patchwork
+pp <- p1 + p2 + plot_layout(ncol = 1)  
+
+wrap_elements(pp)+
+  labs(tag = 'Evangelical Religiosity Index') +
+  theme(
+    plot.tag = element_text(size = 12, angle = 90),
+    plot.tag.position = "left",
+  )
             
 # Misc. facet wrap tools
 facet_wrap(~ trad, ncol = 1, strip.position = 'left') +
