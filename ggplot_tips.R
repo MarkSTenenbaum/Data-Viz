@@ -81,6 +81,9 @@ guides(linetype = guide_legend(override.aes = list(color = c('black', 'gray50', 
 # How to remove specific legend if having double-legend issue (e.g., remove fill/color/group/linetype)
 giudes(color = 'none') 
 
+# reverse order of legend
+guides(fill = guide_legend(reverse = TRUE))
+
 # How to manually arrange plots 
 layout <- "
 AABBCC
